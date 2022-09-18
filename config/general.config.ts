@@ -2,9 +2,9 @@ import { ConfigInterface } from '../interfaces/config.interface';
 
 const config: ConfigInterface = {
   general: {
-    name: 'project name',
-    domain: 'project domain',
-    twitterHandle: 'project twitter handle',
+    name: 'Snappy',
+    domain: 'Snappy',
+    twitterHandle: '@snappysnappy',
   },
 };
 
