@@ -4,7 +4,7 @@ To keep the code base of neat and tidy the following rules apply to every change
 
 > Coding standards
 
-- `prettier` 
+- `prettier`
   
 ## Commit Rules
 
@@ -15,7 +15,8 @@ To help everyone with understanding the commit history of dhire the following co
 - check commitlint.config.js for more details
 - message format of commit `$type: $message`
 - types for a commit message
->  `build`: Changes that affect the build system or external dependencies (example scopes: gulp, broccoli, npm)
+
+> `build`: Changes that affect the build system or external dependencies (example scopes: gulp, broccoli, npm)
 > `ci`: Changes to our CI configuration files and scripts (example scopes: Travis, Circle, BrowserStack, SauceLabs)
 > `docs`: Documentation only changes
 > `feat`: A new feature
