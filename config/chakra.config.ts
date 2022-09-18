@@ -9,6 +9,15 @@ const config: ThemeConfig = {
 };
 
 const theme = extendTheme({
+  colors: {
+    snappy: {
+      yellow: '#FFFF1E',
+      black: '#000000',
+      dark_gray: '#777777',
+      light_gray: '#F7F7F7',
+      white: '#FFFFFF', 
+    },
+  },
   config,
   styles,
   fonts,

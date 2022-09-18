@@ -1,6 +1,7 @@
 import config from '@/config/general.config';
-import { Button, Container } from '@chakra-ui/react';
+import { Container } from '@chakra-ui/react';
 import type { NextPage } from 'next';
+import Hero from 'src/components/landing/Hero';
 import SEO from 'src/components/SEO/SEO';
 
 const Home: NextPage = () => {
@@ -11,7 +12,9 @@ const Home: NextPage = () => {
         description={`${config.general.name} is a decentralized hiring platform`}
         image={``}
       />
-      <Container maxW='full' p='0'></Container>
+      <Container maxW='full' p='0'>
+        <Hero />
+      </Container>
     </div>
   );
 };
