@@ -1,8 +1,8 @@
 import {
-  Button,
   Center,
   Container,
   Heading,
+  HStack,
   Icon,
   Modal,
   ModalBody,
@@ -11,10 +11,11 @@ import {
   ModalOverlay,
   Stack,
   Text,
-  useDisclosure,
+  useDisclosure
 } from '@chakra-ui/react';
 import { HiArrowNarrowDown, HiPlay } from 'react-icons/hi';
 import ReactPlayer from 'react-player';
+import InstallButton from '../Buttons/Install.Button';
 import SnappyComponent from './SnappyComponent';
 
 const Hero = () => {
@@ -23,7 +24,8 @@ const Hero = () => {
   return (
     <Container
       maxW="8xl"
-      py={{ base: '3rem', md: '4rem', lg: '5rem', xl: '8vh' }}
+      py={{ base: '3rem', md: '4rem', lg: '6rem', xl: '9vh' }}
+      px='0'
     >
       <Modal
         isOpen={isOpen}
@@ -46,44 +48,47 @@ const Hero = () => {
       <Stack
         mx="auto"
         maxW="78rem"
+        minH='75vh'
         direction={{ base: 'column', lg: 'row' }}
         justify="space-between"
-        gap="4rem"
+        //gap="4rem"
       >
         <Stack
           justifyContent={'space-between'}
-          pl="1rem"
+          pl="2rem"
           alignItems={'start'}
           maxW={'28rem'}
         >
-          <Stack gap={{ base: '0.7rem', md: '1rem' }} alignItems={'start'}>
+          <Stack  maxW='25rem' gap={{ base: '0.7rem', md: '1rem' }} alignItems={'start'}>
             <Center bg="snappy.yellow" rounded="0.3rem" p="0.3rem 0.5rem">
-              <Text fontWeight={'600'} fontSize="12px">
-                FIGMA PLUGIN
+              <Text fontWeight={'600'} fontSize="14px">
+                 PLUGIN
               </Text>
             </Center>
             <Heading
-              lineHeight={{ base: '3.5rem', md: '4rem' }}
-              letterSpacing={'-0.02em'}
-              fontWeight="900"
-              fontSize={{ base: '5xl', md: '6xl' }}
+              lineHeight={{ base: '4rem', md: '72px' }}
+              letterSpacing={'-0.01em'}
+              fontWeight="600"
+              fontSize={{ base: '62px', md: '72px' }}
             >
-              Generate assets from sentence.
+              Generate ad assets from text.
             </Heading>
             <Text
-              fontSize={{ base: '16px', md: '22px' }}
+              fontSize={{ base: '20px', md: '22px' }}
               color="snappy.dark_gray"
               fontWeight="500"
+              maxW={{base:'70vw', md:'20rem'}}
             >
-              Get copyright-free ad assets, using Stable Diffusion directly in
+              Get copyright-free images,
+              using AI directly in
               Figma.
             </Text>
-            <Stack direction="row" gap={{ base: '0.2rem', md: '0.8rem' }}>
-              <Button size={{ base: 'sm', md: 'md' }}>INSTALL PLUGIN</Button>
+            <Stack pt={'0.5rem'} direction="row" gap={{ base: '0.2rem', md: '0.8rem' }}>
+              <InstallButton />
               <Center
                 onClick={onOpen}
                 as="button"
-                fontWeight="700"
+                fontWeight="600"
                 fontSize={{ base: '14px', md: '16px' }}
                 p="0.3rem"
                 textTransform={'capitalize'}
@@ -93,9 +98,12 @@ const Hero = () => {
               </Center>
             </Stack>
           </Stack>
-          <Center display={{ base: 'none', md: 'flex' }}>
-            <Icon as={HiArrowNarrowDown} w={6} h={6} />
-          </Center>
+          <HStack display={{ base: 'none', md: 'flex' }}>
+            <Center>
+              <Icon as={HiArrowNarrowDown} w={6} h={6} />
+            </Center>
+            <Text color='snappy.dark_gray' fontSize='sm'>Discover how it works</Text>
+          </HStack>
         </Stack>
         <Stack>
           <SnappyComponent />
