@@ -10,7 +10,7 @@ export const Button = {
       borderRadius: '10rem',
       backgroundColor: 'transparent',
       padding: '8px 18px',
-      fontWeight: '800',
+      fontWeight: '600',
       transition: 'all 0.6s',
       _hover: {
         borderRadius: '0.3rem',
@@ -31,11 +31,14 @@ export const Button = {
   sizes: {
     md: {
       border: '2.8px solid black',
-      fontSize: '14px',
+      fontSize: '16px',
+      //height: '3rem',
     },
     sm: {
       border: '2px solid black',
-      fontSize: '12px',
+      fontSize: '14px',
+      height: '2.5rem',
+      padding: '0.5rem 1rem',
     },
   },
 };

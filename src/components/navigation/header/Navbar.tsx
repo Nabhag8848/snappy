@@ -24,7 +24,7 @@ const Navbar = () => {
         maxW="8xl"
         mx="auto"
         flexDirection="column"
-        p={{ base: '1rem 1rem', sm: '0.6rem 2rem', md: '0.8rem 3rem' }}
+        p={{ base: '1rem 0.4rem', sm: '0.6rem 2rem', md: '0.8rem 3rem' }}
       >
         <Flex
           w={'100%'}
@@ -45,7 +45,8 @@ const Navbar = () => {
                 px="0.4rem"
                 variant={'solid'}
                 rounded={'full'}
-                bg="#FD6444"
+                bg="snappy.yellow"
+                color='black'
                 fontSize="sm"
                 position="absolute"
                 transform="translate(-0.75rem, -1.1rem)"
@@ -157,14 +158,15 @@ const Navbar = () => {
                   }}
                   fontWeight="500"
                 >
-                  Job Hunt
+                  Discover
                 </Box>
                 <Badge
                   px="0.4rem"
                   variant={'solid'}
                   rounded={'full'}
-                  bg="#FD6444"
+                  bg="snappy.yellow"
                   fontSize="md"
+                  color='black'
                 >
                   2
                 </Badge>
@@ -178,12 +180,20 @@ const Navbar = () => {
                 onClick={() => onClose()}
                 as="button"
                 transition={'all 0.3s ease'}
-                _hover={{
-                  color: 'grey',
-                }}
-                fontWeight="500"
               >
-                Hire Talent
+                Demo
+              </Box>
+            </Link>
+            <Link href="/hire">
+              <Box
+                display="flex"
+                alignItems={'start'}
+                w="100%"
+                onClick={() => onClose()}
+                as="button"
+                transition={'all 0.3s ease'}
+              >
+                Pricing
               </Box>
             </Link>
             <Box
@@ -197,7 +207,6 @@ const Navbar = () => {
               {/* {useColorModeValue('Dark Mode', 'Light Mode')}
                   <Switch /> */}
             </Box>
-            <Box w="100%" h="0.09rem" bg="gray.500" />
           </Flex>
         </Collapse>
       </Center>
