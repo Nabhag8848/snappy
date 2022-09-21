@@ -1,6 +1,10 @@
 import { Button, Center, HStack, Text } from '@chakra-ui/react';
 
-const InstallButton = () => {
+type Props = {
+  children: string;
+};
+
+export const InstallOnFigma: React.FC<Props> = ({ children }) => {
   return (
     <Button p="0" size={{ base: 'sm', md: 'md' }}>
       <HStack h="3rem">
@@ -34,6 +38,16 @@ const InstallButton = () => {
             />
           </svg>
         </Center>
+        <Text pl="0.2rem">{children}</Text>
+      </HStack>
+    </Button>
+  );
+};
+
+export const InstallOnSketch: React.FC<Props> = ({ children }) => {
+  return (
+    <Button p="0" size={{ base: 'sm', md: 'md' }}>
+      <HStack h="3rem">
         <Center width={'1.2rem'}>
           <svg
             width="19"
@@ -99,10 +113,8 @@ const InstallButton = () => {
             </defs>
           </svg>
         </Center>
-        <Text pl="0.2rem">INSTALL</Text>
+        ;<Text pl="0.2rem">{children}</Text>
       </HStack>
     </Button>
   );
 };
-
-export default InstallButton;

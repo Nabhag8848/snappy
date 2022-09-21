@@ -1,13 +1,11 @@
 import {
   Badge,
   Box,
-  Button,
   Center,
   Collapse,
   Container,
   Flex,
   ScaleFade,
-  Text,
   useDisclosure
 } from '@chakra-ui/react';
 import { Slant as Hamburger } from 'hamburger-react';
@@ -18,49 +16,24 @@ const Navbar = () => {
   const { isOpen, onToggle, onClose } = useDisclosure();
 
   return (
-    <Container maxW="full">
+    <Container p='0.3rem' maxW="full">
       <Center
         display="flex"
         maxW="8xl"
         mx="auto"
         flexDirection="column"
-        p={{ base: '1rem 0.4rem', sm: '0.6rem 2rem', md: '0.8rem 3rem' }}
+        p={{ base: '0.8rem 0.4rem', sm: '0.6rem 2rem', md: '0.6rem 3rem' }}
       >
         <Flex
           w={'100%'}
-          h={20}
+          h={{base:12, md:20}}
           alignItems={'center'}
           justifyContent={'space-between'}
         >
-          <Center display={{ base: 'flex', lg: 'none' }}>
-            <Hamburger
-              toggled={isOpen}
-              toggle={onToggle}
-              size={30}
-              duration={0.4}
-              rounded
-            />
-            <ScaleFade initialScale={0} in={!isOpen}>
-              <Badge
-                px="0.4rem"
-                variant={'solid'}
-                rounded={'full'}
-                bg="snappy.yellow"
-                color='black'
-                fontSize="sm"
-                position="absolute"
-                transform="translate(-0.75rem, -1.1rem)"
-                transition={'all 0.3s ease'}
-              >
-                2
-              </Badge>
-            </ScaleFade>
-          </Center>
           <Link href="/">
             <Box
-              display={{ base: 'none', md: 'flex' }}
+              maxW={'4rem'}
               as="button"
-              fontSize={['xl', '3xl']}
               fontWeight={'800'}
               transition={'all 0.3s ease'}
               _hover={{
@@ -84,11 +57,6 @@ const Navbar = () => {
             >
               <Center>
                 <Box as="button" transition={'all 0.3s ease'}>
-                  Discover
-                </Box>
-              </Center>
-              <Center>
-                <Box as="button" transition={'all 0.3s ease'}>
                   Demo
                 </Box>
               </Center>
@@ -100,19 +68,30 @@ const Navbar = () => {
               </Center>
             </Center>
           </nav>
-          <Button
-            onClick={() => {
-              //onModalOpen();
-            }}
-            p="1rem"
-            size={['sm', 'md']}
-            gap={'0.5rem'}
-          >
-            {/* <Center ml='0.5rem'>
-              <FigmaLogo />
-            </Center> */}
-            <Text mr="0.5rem">Install Plugin</Text>
-          </Button>
+          <Center display={{ base: 'flex', lg: 'none' }}>
+            <Hamburger
+              toggled={isOpen}
+              toggle={onToggle}
+              size={30}
+              duration={0.4}
+              rounded
+            />
+            <ScaleFade initialScale={0} in={!isOpen}>
+              <Badge
+                px="0.4rem"
+                variant={'solid'}
+                rounded={'full'}
+                bg="snappy.yellow"
+                color="black"
+                fontSize="sm"
+                position="absolute"
+                transform="translate(-0.75rem, -1.1rem)"
+                transition={'all 0.3s ease'}
+              >
+                2
+              </Badge>
+            </ScaleFade>
+          </Center>
         </Flex>
         <Collapse in={isOpen} animateOpacity>
           <Flex
@@ -166,7 +145,7 @@ const Navbar = () => {
                   rounded={'full'}
                   bg="snappy.yellow"
                   fontSize="md"
-                  color='black'
+                  color="black"
                 >
                   2
                 </Badge>

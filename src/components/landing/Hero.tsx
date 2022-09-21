@@ -2,7 +2,6 @@ import {
   Center,
   Container,
   Heading,
-  HStack,
   Icon,
   Modal,
   ModalBody,
@@ -13,19 +12,32 @@ import {
   Text,
   useDisclosure
 } from '@chakra-ui/react';
-import { HiArrowNarrowDown, HiPlay } from 'react-icons/hi';
+import { useEffect, useState } from 'react';
+import { HiPlay } from 'react-icons/hi';
 import ReactPlayer from 'react-player';
-import InstallButton from '../Buttons/Install.Button';
+import ReactTextTransition, { presets } from "react-text-transition";
+import { InstallOnFigma } from '../Buttons/Install.Button';
 import SnappyComponent from './SnappyComponent';
 
 const Hero = () => {
-  // const [isPlaying, setIsPlaying] = useState(true);
+  const [isPlaying, setIsPlaying] = useState(true);
   const { isOpen, onOpen, onClose } = useDisclosure();
+  const [index, setIndex] = useState(0);
+  
+  const texts = ["Figma", "Sketch"];
+
+  useEffect(() => {
+    const intervalId = setInterval(() =>
+      setIndex(index => index + 1),
+      3000 // every 3 seconds
+    ); return () => clearTimeout(intervalId);
+  }, []);
+
   return (
     <Container
       maxW="8xl"
-      py={{ base: '3rem', md: '4rem', lg: '6rem', xl: '9vh' }}
-      px='0'
+      py={{ base: '2rem', md: '4rem', lg: '6rem', xl: '4vh' }}
+      px="0"
     >
       <Modal
         isOpen={isOpen}
@@ -36,10 +48,12 @@ const Hero = () => {
         <ModalOverlay />
         <ModalContent m="5vw" rounded={'md'}>
           <ModalCloseButton />
-          <ModalBody>
+          <ModalBody border='2px solid red'>
             <ReactPlayer
               url="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/WeAreGoingOnBullrun.mp4"
-              // playing={isPlaying}
+             // playing={isPlaying}
+              width='100%'
+              height='100%'
             />
           </ModalBody>
         </ModalContent>
@@ -48,43 +62,62 @@ const Hero = () => {
       <Stack
         mx="auto"
         maxW="78rem"
-        minH='75vh'
-        direction={{ base: 'column', lg: 'row' }}
+        minH="75vh"
+        direction={{ base: 'column', lg: 'column' }}
         justify="space-between"
-        //gap="4rem"
+        alignItems={'center'}
+        gap={{base:'2rem', md:"2rem"}}
       >
         <Stack
+          zIndex={'1'}
           justifyContent={'space-between'}
-          pl="2rem"
-          alignItems={'start'}
-          maxW={'28rem'}
+          alignItems={'center'}
+          maxW="3xl"
+          textAlign={'center'}
         >
-          <Stack  maxW='25rem' gap={{ base: '0.7rem', md: '1rem' }} alignItems={'start'}>
+          <Stack
+            mx="auto"
+            w="full"
+            gap={{ base: '0.5rem', md: '0.8rem' }}
+            alignItems={'center'}
+          >
             <Center bg="snappy.yellow" rounded="0.3rem" p="0.3rem 0.5rem">
-              <Text fontWeight={'600'} fontSize="14px">
-                 PLUGIN
+              <Text fontWeight={'600'} fontSize={{base:'10px', md:"14px"}}>
+              A PLUGIN FOR DESIGN TOOLS
               </Text>
             </Center>
             <Heading
-              lineHeight={{ base: '4rem', md: '72px' }}
+              lineHeight={{ base: '2.6rem', md: '72px' }}
               letterSpacing={'-0.01em'}
               fontWeight="600"
-              fontSize={{ base: '62px', md: '72px' }}
+              fontSize={{ base: '36px', md: '57px' }}
             >
-              Generate ad assets from text.
+              Generate ad assets from text inside {" "}
+              <ReactTextTransition
+              springConfig={presets.stiff}
+              style={{ margin: "0 2px" }}
+              inline
+            >
+              {texts[index % texts.length]}
+            </ReactTextTransition> 🎨
             </Heading>
             <Text
-              fontSize={{ base: '20px', md: '22px' }}
+              fontSize={{ base: '15px', md: '18px' }}
               color="snappy.dark_gray"
               fontWeight="500"
-              maxW={{base:'70vw', md:'20rem'}}
+              maxW={{ base: '80vw', md: '30rem' }}
             >
-              Get copyright-free images,
-              using AI directly in
-              Figma.
+              A plugin for copyright-free images, using AI directly in your
+              favorite design tool.
             </Text>
-            <Stack pt={'0.5rem'} direction="row" gap={{ base: '0.2rem', md: '0.8rem' }}>
-              <InstallButton />
+            <Stack
+              pt={'0.5rem'}
+              direction="row"
+              gap={{ base: '0.2rem', md: '0.8rem' }}
+            >
+              <InstallOnFigma>
+                GET PLUGIN
+              </InstallOnFigma>
               <Center
                 onClick={onOpen}
                 as="button"
@@ -98,14 +131,8 @@ const Hero = () => {
               </Center>
             </Stack>
           </Stack>
-          <HStack display={{ base: 'none', md: 'flex' }}>
-            <Center>
-              <Icon as={HiArrowNarrowDown} w={6} h={6} />
-            </Center>
-            <Text color='snappy.dark_gray' fontSize='sm'>Discover how it works</Text>
-          </HStack>
         </Stack>
-        <Stack>
+        <Stack zIndex={'0'}>
           <SnappyComponent />
         </Stack>
       </Stack>
