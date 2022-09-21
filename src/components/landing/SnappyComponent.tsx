@@ -2,14 +2,9 @@ import { Center } from '@chakra-ui/react';
 
 const SnappyComponent = () => {
   return (
-    <Center
-      p="0"
-      w={{ base: '100vw', md: '36rem', lg: '42rem' }}
-      overflow={{ base: 'hidden', md: 'visible' }}
-    >
+    <Center maxW={'100vw'} overflow={{ base: 'hidden', md: 'visible' }}>
       <Center
-        w={{ base: '200vw', md: '57rem' }}
-        maxH={{ base: '75vh', md: '31rem' }}
+        maxH={{ base: '80vh', md: '40rem' }}
         transform={{ base: 'translateX(8rem)', md: 'translateX(8rem)' }}
       >
         <svg
