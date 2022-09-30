@@ -1,14 +1,28 @@
 import { Button, Center, HStack, Text } from '@chakra-ui/react';
+import { useState } from 'react';
 
 type Props = {
   children: string;
 };
 
 export const InstallOnFigma: React.FC<Props> = ({ children }) => {
+  const [mouseHover, setMouseHover] = useState(false);
+
   return (
-    <Button p="0" size={{ base: 'sm', md: 'md' }}>
+    <Button
+      overflow="hidden"
+      onMouseEnter={() => setMouseHover(true)}
+      onMouseLeave={() => setMouseHover(false)}
+      p="0"
+      size={{ base: 'sm', md: 'md' }}
+    >
       <HStack h="3rem">
-        <Center width={'1.2rem'}>
+        <Center
+          transform={mouseHover ? 'scale(3.5) rotate(10deg) translateX(-3px)' : ''}
+          transition="all 0.3s"
+          overflow={'visible'}
+          width={'1.2rem'}
+        >
           <svg
             width="12"
             height="17"
@@ -45,10 +59,23 @@ export const InstallOnFigma: React.FC<Props> = ({ children }) => {
 };
 
 export const InstallOnSketch: React.FC<Props> = ({ children }) => {
+  const [mouseHover, setMouseHover] = useState(false);
+
   return (
-    <Button p="0" size={{ base: 'sm', md: 'md' }}>
+    <Button
+    overflow="hidden"
+      onMouseEnter={() => setMouseHover(true)}
+      onMouseLeave={() => setMouseHover(false)}
+      p="0"
+      size={{ base: 'sm', md: 'md' }}
+    >
       <HStack h="3rem">
-        <Center width={'1.2rem'}>
+        <Center
+          transform={mouseHover ? 'scale(3.8) rotate(10deg) translateX(-5px)' : ''}
+          transition="all 0.3s"
+          overflow={'visible'}
+          width={'1.2rem'}
+        >
           <svg
             width="19"
             height="17"
@@ -58,50 +85,50 @@ export const InstallOnSketch: React.FC<Props> = ({ children }) => {
           >
             <g clip-path="url(#clip0_124_15)">
               <path
-                fill-rule="evenodd"
-                clip-rule="evenodd"
+                fillRule="evenodd"
+                clipRule="evenodd"
                 d="M3.86011 6.10834L9.47972 16.9804L0.0341797 6.10834H3.86011Z"
                 fill="#EA6C00"
               />
               <path
-                fill-rule="evenodd"
-                clip-rule="evenodd"
+                fillRule="evenodd"
+                clipRule="evenodd"
                 d="M15.1018 6.10834L9.48219 16.9804L18.9277 6.10834H15.1018Z"
                 fill="#EA6C00"
               />
               <path
-                fill-rule="evenodd"
-                clip-rule="evenodd"
+                fillRule="evenodd"
+                clipRule="evenodd"
                 d="M3.86035 6.10834H15.0996L9.47996 16.9804L3.86035 6.10834Z"
                 fill="#FDAD00"
               />
               <path
-                fill-rule="evenodd"
-                clip-rule="evenodd"
+                fillRule="evenodd"
+                clipRule="evenodd"
                 d="M9.47996 0.0830078L4.15613 0.639264L3.86035 6.10832L9.47996 0.0830078Z"
                 fill="#FDD231"
               />
               <path
-                fill-rule="evenodd"
-                clip-rule="evenodd"
+                fillRule="evenodd"
+                clipRule="evenodd"
                 d="M9.48 0.0830078L14.8038 0.639264L15.0996 6.10832L9.48 0.0830078Z"
                 fill="#FDD231"
               />
               <path
-                fill-rule="evenodd"
-                clip-rule="evenodd"
+                fillRule="evenodd"
+                clipRule="evenodd"
                 d="M18.9277 6.10834L14.806 0.639282L15.1018 6.10834H18.9277Z"
                 fill="#FDAD00"
               />
               <path
-                fill-rule="evenodd"
-                clip-rule="evenodd"
+                fillRule="evenodd"
+                clipRule="evenodd"
                 d="M0.0341797 6.10834L4.15589 0.639282L3.86011 6.10834H0.0341797Z"
                 fill="#FDAD00"
               />
               <path
-                fill-rule="evenodd"
-                clip-rule="evenodd"
+                fillRule="evenodd"
+                clipRule="evenodd"
                 d="M9.47996 0.0830078L3.86035 6.10832H15.0996L9.47996 0.0830078Z"
                 fill="#FEEEB7"
               />

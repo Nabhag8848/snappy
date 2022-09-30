@@ -2,7 +2,6 @@ import {
   Center,
   Container,
   Heading,
-  Icon,
   Modal,
   ModalBody,
   ModalCloseButton,
@@ -13,24 +12,24 @@ import {
   useDisclosure
 } from '@chakra-ui/react';
 import { useEffect, useState } from 'react';
-import { HiPlay } from 'react-icons/hi';
 import ReactPlayer from 'react-player';
-import ReactTextTransition, { presets } from "react-text-transition";
-import { InstallOnFigma } from '../Buttons/Install.Button';
+import ReactTextTransition, { presets } from 'react-text-transition';
+import { InstallOnFigma, InstallOnSketch } from '../Buttons/Install.Button';
 import SnappyComponent from './SnappyComponent';
 
 const Hero = () => {
   const [isPlaying, setIsPlaying] = useState(true);
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [index, setIndex] = useState(0);
-  
-  const texts = ["Figma", "Sketch"];
+
+  const texts = ['Figma', 'Sketch'];
 
   useEffect(() => {
-    const intervalId = setInterval(() =>
-      setIndex(index => index + 1),
-      3000 // every 3 seconds
-    ); return () => clearTimeout(intervalId);
+    const intervalId = setInterval(
+      () => setIndex((index) => index + 1),
+      2500 // every 3 seconds
+    );
+    return () => clearTimeout(intervalId);
   }, []);
 
   return (
@@ -48,12 +47,12 @@ const Hero = () => {
         <ModalOverlay />
         <ModalContent m="5vw" rounded={'md'}>
           <ModalCloseButton />
-          <ModalBody border='2px solid red'>
+          <ModalBody border="2px solid red">
             <ReactPlayer
               url="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/WeAreGoingOnBullrun.mp4"
-             // playing={isPlaying}
-              width='100%'
-              height='100%'
+              // playing={isPlaying}
+              width="100%"
+              height="100%"
             />
           </ModalBody>
         </ModalContent>
@@ -66,7 +65,7 @@ const Hero = () => {
         direction={{ base: 'column', lg: 'column' }}
         justify="space-between"
         alignItems={'center'}
-        gap={{base:'2rem', md:"2rem"}}
+        gap={{ base: '2rem', md: '2rem' }}
       >
         <Stack
           zIndex={'1'}
@@ -82,8 +81,8 @@ const Hero = () => {
             alignItems={'center'}
           >
             <Center bg="snappy.yellow" rounded="0.3rem" p="0.3rem 0.5rem">
-              <Text fontWeight={'600'} fontSize={{base:'10px', md:"14px"}}>
-              A PLUGIN FOR DESIGN TOOLS
+              <Text fontWeight={'600'} fontSize={{ base: '10px', md: '14px' }}>
+                A PLUGIN FOR DESIGN TOOLS
               </Text>
             </Center>
             <Heading
@@ -92,14 +91,14 @@ const Hero = () => {
               fontWeight="600"
               fontSize={{ base: '36px', md: '57px' }}
             >
-              Generate ad assets from text inside {" "}
+              Generate ad assets from text inside {''}
               <ReactTextTransition
-              springConfig={presets.stiff}
-              style={{ margin: "0 2px" }}
-              inline
-            >
-              {texts[index % texts.length]}
-            </ReactTextTransition> 🎨
+                springConfig={presets.stiff}
+                style={{ margin: '0 2px' }}
+                inline
+              >
+                {texts[index % texts.length]}
+              </ReactTextTransition>{' '} 🎨
             </Heading>
             <Text
               fontSize={{ base: '15px', md: '18px' }}
@@ -115,10 +114,9 @@ const Hero = () => {
               direction="row"
               gap={{ base: '0.2rem', md: '0.8rem' }}
             >
-              <InstallOnFigma>
-                GET PLUGIN
-              </InstallOnFigma>
-              <Center
+              <InstallOnFigma>GET PLUGIN</InstallOnFigma>
+              <InstallOnSketch>COMING SOON</InstallOnSketch>
+              {/* <Center
                 onClick={onOpen}
                 as="button"
                 fontWeight="600"
@@ -128,11 +126,11 @@ const Hero = () => {
               >
                 <Icon as={HiPlay} w={[6, 8]} h={[6, 8]} mx="0.5rem" />
                 Watch Demo
-              </Center>
+              </Center> */}
             </Stack>
           </Stack>
         </Stack>
-        <Stack zIndex={'0'}>
+        <Stack  zIndex={'0'}>
           <SnappyComponent />
         </Stack>
       </Stack>

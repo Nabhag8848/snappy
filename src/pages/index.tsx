@@ -1,6 +1,7 @@
 import config from '@/config/general.config';
 import { Container } from '@chakra-ui/react';
 import type { NextPage } from 'next';
+import Features from 'src/components/Features/Features';
 import Hero from 'src/components/landing/Hero';
 import SEO from 'src/components/SEO/SEO';
 
@@ -12,8 +13,9 @@ const Home: NextPage = () => {
         description={`${config.general.name} is a Figma Plugin which helps you generate copyright free ad assets directly inside Figma`}
         image={`https://asset.cloudinary.com/demonicirfan/47a469f3a5af187cad96111da00c3f5b`}
       />
-      <Container maxW='full' p='0'>
+      <Container maxW='full' p='0' display={'flex'} flexDirection='column' gap={'14rem'}>
         <Hero />
+        <Features />
       </Container>
     </div>
   );

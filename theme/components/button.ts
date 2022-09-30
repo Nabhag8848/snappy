@@ -12,12 +12,15 @@ export const Button = {
       fontWeight: '400',
       transition: 'all 0.6s',
       _hover: {
-        borderRadius: '0.3rem',
-        transition: 'all 0.6s',
+        transform: 'scale(1.05)',
+        transition: 'all 0.4s',
+        backgroundColor: '#EEEEEf',
       },
       _active: {
+        scale: '1.02',
         borderRadius: '0.3rem',
         transition: 'all 0.6s',
+        backgroundColor: '#EEEEEE',
       },
     }),
     outline: (props: StyleFunctionProps) => ({
