@@ -1,4 +1,4 @@
 export const fonts = {
-  heading: '"Poppins", sans-serif',
+  heading: '"Archivo", sans-serif',
   body: '"Poppins", sans-serif',
 };

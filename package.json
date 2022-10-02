@@ -16,6 +16,7 @@
     "prepare": "husky install"
   },
   "dependencies": {
+    "@chakra-ui/icons": "^2.0.10",
     "@chakra-ui/react": "^2.3.2",
     "@emotion/react": "^11",
     "@emotion/styled": "^11",
@@ -27,6 +28,7 @@
     "react-dom": "18.2.0",
     "react-icons": "^4.4.0",
     "react-player": "^2.11.0",
+    "react-scroll-parallax": "^3.3.1",
     "react-text-transition": "^3.0.2"
   },
   "devDependencies": {

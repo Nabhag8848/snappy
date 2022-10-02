@@ -2,7 +2,7 @@ import { Button, Center, HStack, Text } from '@chakra-ui/react';
 import { useState } from 'react';
 
 type Props = {
-  children: string;
+  children?: string;
 };
 
 export const InstallOnFigma: React.FC<Props> = ({ children }) => {
@@ -18,7 +18,9 @@ export const InstallOnFigma: React.FC<Props> = ({ children }) => {
     >
       <HStack h="3rem">
         <Center
-          transform={mouseHover ? 'scale(3.5) rotate(10deg) translateX(-3px)' : ''}
+          transform={
+            mouseHover ? 'scale(3.5) rotate(10deg) translateX(-3px)' : ''
+          }
           transition="all 0.3s"
           overflow={'visible'}
           width={'1.2rem'}
@@ -62,86 +64,87 @@ export const InstallOnSketch: React.FC<Props> = ({ children }) => {
   const [mouseHover, setMouseHover] = useState(false);
 
   return (
-    <Button
-    overflow="hidden"
-      onMouseEnter={() => setMouseHover(true)}
-      onMouseLeave={() => setMouseHover(false)}
-      p="0"
-      size={{ base: 'sm', md: 'md' }}
-    >
-      <HStack h="3rem">
-        <Center
-          transform={mouseHover ? 'scale(3.8) rotate(10deg) translateX(-5px)' : ''}
-          transition="all 0.3s"
-          overflow={'visible'}
-          width={'1.2rem'}
-        >
-          <svg
-            width="19"
-            height="17"
-            viewBox="0 0 19 17"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
+      <Button
+        overflow="hidden"
+        onMouseEnter={() => setMouseHover(true)}
+        onMouseLeave={() => setMouseHover(false)}
+        p="0"
+        size={{ base: 'sm', md: 'md' }}
+      >
+        <HStack h="3rem">
+          <Center
+            transform={
+              mouseHover ? 'scale(3.8) rotate(10deg) translateX(-5px)' : ''
+            }
+            transition="all 0.3s"
+            overflow={'visible'}
+            width={'1.2rem'}
           >
-            <g clip-path="url(#clip0_124_15)">
-              <path
-                fillRule="evenodd"
-                clipRule="evenodd"
-                d="M3.86011 6.10834L9.47972 16.9804L0.0341797 6.10834H3.86011Z"
-                fill="#EA6C00"
-              />
-              <path
-                fillRule="evenodd"
-                clipRule="evenodd"
-                d="M15.1018 6.10834L9.48219 16.9804L18.9277 6.10834H15.1018Z"
-                fill="#EA6C00"
-              />
-              <path
-                fillRule="evenodd"
-                clipRule="evenodd"
-                d="M3.86035 6.10834H15.0996L9.47996 16.9804L3.86035 6.10834Z"
-                fill="#FDAD00"
-              />
-              <path
-                fillRule="evenodd"
-                clipRule="evenodd"
-                d="M9.47996 0.0830078L4.15613 0.639264L3.86035 6.10832L9.47996 0.0830078Z"
-                fill="#FDD231"
-              />
-              <path
-                fillRule="evenodd"
-                clipRule="evenodd"
-                d="M9.48 0.0830078L14.8038 0.639264L15.0996 6.10832L9.48 0.0830078Z"
-                fill="#FDD231"
-              />
-              <path
-                fillRule="evenodd"
-                clipRule="evenodd"
-                d="M18.9277 6.10834L14.806 0.639282L15.1018 6.10834H18.9277Z"
-                fill="#FDAD00"
-              />
-              <path
-                fillRule="evenodd"
-                clipRule="evenodd"
-                d="M0.0341797 6.10834L4.15589 0.639282L3.86011 6.10834H0.0341797Z"
-                fill="#FDAD00"
-              />
-              <path
-                fillRule="evenodd"
-                clipRule="evenodd"
-                d="M9.47996 0.0830078L3.86035 6.10832H15.0996L9.47996 0.0830078Z"
-                fill="#FEEEB7"
-              />
-            </g>
-            <defs>
-              <clipPath id="clip0_124_15">
-                <rect width="19" height="17" fill="white" />
-              </clipPath>
-            </defs>
-          </svg>
+            <svg
+              width="19"
+              height="17"
+              viewBox="0 0 19 17"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g clip-path="url(#clip0_124_15)">
+                <path
+                  fillRule="evenodd"
+                  clipRule="evenodd"
+                  d="M3.86011 6.10834L9.47972 16.9804L0.0341797 6.10834H3.86011Z"
+                  fill="#EA6C00"
+                />
+                <path
+                  fillRule="evenodd"
+                  clipRule="evenodd"
+                  d="M15.1018 6.10834L9.48219 16.9804L18.9277 6.10834H15.1018Z"
+                  fill="#EA6C00"
+                />
+                <path
+                  fillRule="evenodd"
+                  clipRule="evenodd"
+                  d="M3.86035 6.10834H15.0996L9.47996 16.9804L3.86035 6.10834Z"
+                  fill="#FDAD00"
+                />
+                <path
+                  fillRule="evenodd"
+                  clipRule="evenodd"
+                  d="M9.47996 0.0830078L4.15613 0.639264L3.86035 6.10832L9.47996 0.0830078Z"
+                  fill="#FDD231"
+                />
+                <path
+                  fillRule="evenodd"
+                  clipRule="evenodd"
+                  d="M9.48 0.0830078L14.8038 0.639264L15.0996 6.10832L9.48 0.0830078Z"
+                  fill="#FDD231"
+                />
+                <path
+                  fillRule="evenodd"
+                  clipRule="evenodd"
+                  d="M18.9277 6.10834L14.806 0.639282L15.1018 6.10834H18.9277Z"
+                  fill="#FDAD00"
+                />
+                <path
+                  fillRule="evenodd"
+                  clipRule="evenodd"
+                  d="M0.0341797 6.10834L4.15589 0.639282L3.86011 6.10834H0.0341797Z"
+                  fill="#FDAD00"
+                />
+                <path
+                  fillRule="evenodd"
+                  clipRule="evenodd"
+                  d="M9.47996 0.0830078L3.86035 6.10832H15.0996L9.47996 0.0830078Z"
+                  fill="#FEEEB7"
+                />
+              </g>
+              <defs>
+                <clipPath id="clip0_124_15">
+                  <rect width="19" height="17" fill="white" />
+                </clipPath>
+              </defs>
+            </svg>
         </Center>
-        ;<Text pl="0.2rem">{children}</Text>
-      </HStack>
-    </Button>
+        </HStack>
+      </Button>
   );
 };

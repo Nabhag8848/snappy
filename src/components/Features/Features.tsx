@@ -1,12 +1,12 @@
-import { Center, Container } from '@chakra-ui/react';
+
+import { Container } from '@chakra-ui/react';
 import Count from './Count';
-import Feature1 from './feature1/Feature1';
-import Feature2 from './feature2/Feature2';
+import FigmaFrame from './feature/FigmaFrame';
 
 const Features = () => {
   return (
     <Container minW={'full'} bg="white" m="0">
-      <Container
+      {/* <Container
         minW="full"
         position={'absolute'}
         bottom="0"
@@ -49,10 +49,11 @@ const Features = () => {
             </Center>
           </Center>
         </Center>
-      </Container>
+      </Container> */}
       <Count />
-      <Feature1 />
-      <Feature2 />
+      <FigmaFrame />
+      {/* <Feature1 />
+      <Feature2 /> */}
     </Container>
   );
 };
